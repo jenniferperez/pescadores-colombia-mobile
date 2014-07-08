@@ -35,7 +35,7 @@ function readFishinglog(userId){
                     
                     $('#myfishinglogs').append(new_fishinglog);
                 }
-                $('#myfishinglogs').append("</ul>");
+                
 
             },
 
@@ -48,11 +48,49 @@ function buildList(title,place,date)
 {
 
     var fishinglogItem =
-     //"<div id = class = \"fishinglogItem\">" +
-                 "<li><a href=\"acura.html\">"+title+place+date+"</a>"+
-                "</li>"
-    //"</div>"+
-    ;
+    "<span>"+
+         "<div id = class = \"fishinglogItem\">" +
+        "<div class=\"title\"> <a href=\"fishinglogDetail.html\">"+title+"</a>"+"</div>" +
+        "<div class=\"place\"> " + "Lugar: "+ place+ ", " +date+"</a>"+"</div>" +
+        "</div>"+
+    "</span>";
 
      return fishinglogItem;
 }
+
+
+function fishingLogDetail(userId,fishingLogId){
+
+    var uri = "http://pescadores-colombia-api.herokuapp.com/fishinglog/"+userId+"/"+fishingLogId;
+        $.ajax({
+        url: uri,
+        type: "GET",
+        dataType: "JSON",
+        cache: false,
+
+        success: function (data, status) {
+
+            
+                var title = data[0].title;
+
+                var place = data[0].place;
+                var date = data[0].date;
+                var fish = data[0].fish;
+                var bait = data[0].bait;
+                var weight = data[0].weight;
+                var size = data[0].size;
+                var description = data[0].description;
+                var imageURL = data[0].imageURL;
+                var seasonId = data[0].seasonId;
+                var fishingpartners = data[0].fishingpartners;
+                alert(title+place+date+fish+bait+weight+size+description+
+                    imageURL+seasonId+fishingLogId);
+        },
+
+        error: function (status) {
+            alert('ERROR!!.\nLa aplicacion fallo al intentar recuperar las bitácoras.' + status);
+        }
+    });
+}
+
+
