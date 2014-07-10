@@ -44,4 +44,3 @@ function returnToWall() {
     document.location.href = "login.html";
 }
 
-

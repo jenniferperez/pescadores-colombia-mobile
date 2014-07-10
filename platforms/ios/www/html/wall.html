@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+	<head>
+		<!-- Properties -->
+		<meta charset="UTF-8">
+		<title>Pescadores Colombia - Wall</title>
+
+		<!-- Styles -->
+		<link rel = "stylesheet" href="../css/frameworks/jquery.mobile-1.4.2.css">
+		<link rel = "stylesheet" href = "../css/utilities/general_utilities.css">
+		<link rel = "stylesheet" href = "../css/utilities/general_template.css">
+		<link rel = "stylesheet" href = "../css/views/wall.css">
+
+		<!-- Scripts -->
+		<script type="text/javascript" src = "../js/frameworks/cordova-1.6.1.js"></script>
+		<script type="text/javascript" src = "../js/frameworks/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src = "../js/frameworks/jquery.mobile-1.4.2.js"></script>
+		<script type="text/javascript" src = "../js/utilities/general_utilities.js"></script>
+		<script type="text/javascript" src = "../js/views/wall.js"></script>
+
+	</head>
+
+	<body onload="readPost()">
+		<div data-role="page" id="wall">
+			<div data-role="header" class = "header"> &nbsp;
+				<h1 class="ui-title">Muro</h1>	
+				<img id="photo" class="ui-btn-left">
+				<a data-role="button" data-icon="bars" class="ui-btn-right" data-iconpos="notext" href="#menu"></a>			
+			</div>
+			
+			<div data-role="panel" id="menu" data-display="push" data-position="right">
+   				<div class="ui-panel-inner">
+      				<ul data-role="listview" class="mainMenu"></ul>
+   				</div>
+ 			</div>
+			<div data-role="content" class="content" >
+				<input type="text" id="newComment" value="" placeholder="¿Qué está pasando?"  />
+				<a href="#" data-role="button" data-icon="check" onclick="post(); return false" rel="external">Publicar</a>
+				<section id="body-section" class="body-section">
+					<section id = "wall"></section>	
+				</section>
+					
+			</div>
+		</div>
+
+	</body>
+</html>

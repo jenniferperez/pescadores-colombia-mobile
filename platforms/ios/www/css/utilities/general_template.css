@@ -1,0 +1,10 @@
+/* Generla Styles */
+.header, .content, .footer{
+	border: none;
+	text-align: center;
+}
+
+.header {
+	background-image: -webkit-linear-gradient(bottom, #F0FFFF 0%, #ADD8E6 100%);
+	background-image: -o-linear-gradient(bottom, #F0FFFF 0%, #ADD8E6 100%);
+}

@@ -36,7 +36,7 @@ function initView()
 {
     //vincularFacebook();
     //ingresarInformacionBasica();
-    readPost();
+    readPost(count);
 }
 
 function redirectTo(page){
@@ -44,9 +44,12 @@ function redirectTo(page){
 	return false;
 }
 
-function readPost(){
+function readPost(count){
 
-	var uri = "http://pescadores-colombia-api.herokuapp.com/wall";
+	var uri = "http://pescadores-colombia-api.herokuapp.com/wall/"+count;
+
+
+    //var uri = "http://localhost:5050/wall/"+count;
 
     $.ajax({
         url: uri,

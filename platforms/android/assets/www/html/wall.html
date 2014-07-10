@@ -22,6 +22,13 @@
 
 	<body onload="readPost()">
 		<div data-role="page" id="wall">
+
+			<div data-role="panel" id="menu" data-position="right" data-display="overlay">
+   				<div>
+      				<ul data-role="listview" class="mainMenu"></ul>
+   				</div>
+ 			</div>
+
 			<div data-role="header" class = "header"> &nbsp;
 				<h1 class="ui-title">Muro</h1>	
 				<img id="photo" class="ui-btn-left">
@@ -31,11 +38,6 @@
 
 			</div>
 			
-			<div data-role="panel" id="menu" data-display="push" data-position="right">
-   				<div>
-      				<ul data-role="listview" class="mainMenu"></ul>
-   				</div>
- 			</div>
 			<div data-role="content" class="content" >
 				<input type="text" id="newComment" value="" placeholder="¿Qué está pasando?"  />
 				<a href="#" data-role="button" data-icon="check" onclick="post(); return false" rel="external">Publicar</a>
@@ -44,6 +46,7 @@
 				</section>
 					
 			</div>
+
 		</div>
 
 	</body>
